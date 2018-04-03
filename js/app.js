@@ -17,7 +17,7 @@ editButton.onclick = editUsername;
 reloadButton.onclick = getAllMessages;
 
 setInterval (function(){getAllMessages();}, 5000);
-let latest = getAllMessages();
+let latest = "hiya";
 console.log(latest);
 /*******************************************
 * Create a new message item:
@@ -87,7 +87,7 @@ function sendMessage() {
 *****************************************************/
 function getAllMessages() {
   
-  axios.get('http://127.0.0.1:8000/messages/?latest=2018-04-02T21:24:10.803748Z')
+  axios.get('http://127.0.0.1:8000/messages/?latest=' + latest);
     .then(response => response.data)
     .then(data => {
         console.log(data);
